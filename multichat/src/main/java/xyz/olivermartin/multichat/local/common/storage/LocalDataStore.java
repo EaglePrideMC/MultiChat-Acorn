@@ -51,7 +51,12 @@ public class LocalDataStore {
 	/**
 	 * Which players can chat using colours
 	 */
-	private Map<UUID, Boolean> colourMap = new HashMap<UUID, Boolean>();
+	private Map<UUID, Boolean> simpleColourMap = new HashMap<UUID, Boolean>();
+
+	/**
+	 * Which players can chat using rgb colours
+	 */
+	private Map<UUID, Boolean> rgbColourMap = new HashMap<UUID, Boolean>();
 
 	/**
 	 * List of channels with their members
@@ -108,8 +113,15 @@ public class LocalDataStore {
 	/**
 	 * @return the colourMap
 	 */
-	public synchronized Map<UUID, Boolean> getColourMap() {
-		return colourMap;
+	public synchronized Map<UUID, Boolean> getSimpleColourMap() {
+		return simpleColourMap;
+	}
+
+	/**
+	 * @return the rgbMap
+	 */
+	public synchronized Map<UUID, Boolean> getRGBColourMap() {
+		return rgbColourMap;
 	}
 
 	/**
@@ -171,8 +183,15 @@ public class LocalDataStore {
 	/**
 	 * @param colourMap the colourMap to set
 	 */
-	public synchronized void setColourMap(Map<UUID, Boolean> colourMap) {
-		this.colourMap = colourMap;
+	public synchronized void setSimpleColourMap(Map<UUID, Boolean> simpleColourMap) {
+		this.simpleColourMap = simpleColourMap;
+	}
+
+	/**
+	 * @param colourMap the colourMap to set
+	 */
+	public synchronized void setRGBColourMap(Map<UUID, Boolean> rgbColourMap) {
+		this.rgbColourMap = rgbColourMap;
 	}
 
 	/**
